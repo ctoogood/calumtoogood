@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+header {
+  text-align: center;
+  font: 1.5rem josefin sans;
+  color: #102737;
+  padding: .5rem; }
+  header .header-menu-list {
+    font-size: .75rem;
+    font-weight: 300;
+    padding-top: .5rem; }
+
+main {
+  position: relative;
+  text-align: center; }
+  main .photography-type {
+    font: 1rem josefin sans;
+    font-weight: 300;
+    color: #102737;
+    padding-top: 2rem; }
+    main .photography-type p {
+      display: inline; }
+  main .photography-project-list {
+    font: 1rem josefin sans;
+    font-weight: 300;
+    color: #102737;
+    padding-top: 2rem; }
+  main .photography-project {
+    width: 100%;
+    padding: .5rem; }
+    main .photography-project img {
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+
+footer {
+  height: 7rem;
+  background-color: #102737; }

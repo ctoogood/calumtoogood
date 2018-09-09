@@ -1,0 +1,162 @@
+//***************************************************IMPORTS**********************************************************//
+@import "css/variables.scss";
+@import "css/media.scss";
+
+//***************************************************GENERAL*********************************************************//
+html, body {
+    margin:0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+header {
+    background-color: white;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+    padding-bottom: 1rem;
+    z-index: 3;
+    position: sticky;
+    top:0;
+}
+
+.header-content {
+    text-align: center;
+    position: relative;
+    font: 1.8rem josefin sans;
+    color: #102737;
+    padding: .5rem;
+    padding-top:1rem;
+
+    .header-menu-list {
+        font-size:.9rem;
+        font-weight: 300;
+        padding-top:.5rem;
+
+    }
+
+    .social-buttons {
+            a {
+                text-decoration: none;
+                color:#102737;
+                font-size:1rem;
+            }
+
+            @include mobileFirst(640) {
+                position: absolute;
+                right:0;
+                top:0;
+                padding:1rem;
+            }
+    }
+
+    @include mobileFirst(640) {
+        text-align: left;
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+.hero {
+    height:75vh;
+    position: relative;
+    margin: auto;
+    padding-bottom: 2rem;
+
+    img {
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        filter:brightness(0.9);
+    }
+
+    p {
+        color:white;
+        font:2rem merriweather;
+        font-weight: 300;
+        text-align: center;
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+        @include mobileFirst(920) {
+            font-size: 3rem;
+        }
+    }
+}
+
+main {
+    position: relative;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+
+    .photography-type {
+        font:1rem josefin sans;
+        font-weight: 300;
+        color:#102737;
+        padding-top: 2rem;
+
+        p {
+            display: inline;
+        }
+
+        @include mobileFirst(640) {
+            position: absolute;
+            right:0;
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    .photography-project-list {
+        font:1rem montserrat;
+        //font-weight: 300;
+        color:#102737;
+        padding-top: 2rem;
+
+        @include mobileFirst(480) {
+            display:flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .photography-project {
+        width:100%;
+        padding:.5rem;
+
+        img {
+            width:100%;
+            object-fit:cover;
+            box-shadow:0px 4px 4px rgba(0,0,0,0.2);
+            border-radius:2px;
+        }
+
+        p {
+            line-height: .1;
+        }
+
+        @include mobileFirst(480) {
+            width:50%;
+        }
+
+        @include mobileFirst(800) {
+            width:33.33%;
+        }
+    }
+
+
+
+}
+
+footer {
+    height: 7rem;
+    box-shadow:4px 4px 0px rgba(0,0,0,0.2);
+}
+

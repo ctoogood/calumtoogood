@@ -1,0 +1,50 @@
+//COLOURING
+
+$backgroundColor: white;
+$divColor: #2a4355;
+$textColor: #2a4355;
+
+//FONTS
+
+$titleFont: Josefin Sans;
+$textFont: Montserrat;
+
+//MEDIA QUERIES
+
+$phone: 480px;
+$tablet: 768px;
+$desktop:992px;
+$widescreen:1200px;
+
+//MIXINS
+
+@mixin phone {
+  @media (min-width: #{$phone}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media (min-device-width: #{$widescreen}) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media only screen and(orientation:portrait) {
+    @content;
+  }
+}
+

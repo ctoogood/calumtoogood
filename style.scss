@@ -16,13 +16,27 @@ body {
     box-sizing: border-box;
   }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    transition:.3s;
+
+    &:hover {
+        color: inherit;
+        opacity: 0.7;
+        
+        
+    }
+}
+
 header {
     background-color: white;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
     z-index: 3;
     position: sticky;
     top:0;
+    width:100vw;
 }
 
 .header-content {
@@ -31,6 +45,8 @@ header {
     font: 1.8rem josefin sans;
     color: #102737;
     padding: .5rem;
+    padding-left:1.5rem;
+    padding-right: 1.5rem;
     padding-top:1rem;
 
     .header-menu-list {
@@ -50,8 +66,8 @@ header {
             @include mobileFirst(640) {
                 position: absolute;
                 right:0;
-                top:0;
-                padding:1rem;
+                bottom:0;
+                padding-bottom:.5rem;
             }
     }
 
@@ -63,7 +79,8 @@ header {
 }
 
 .hero {
-    height:75vh;
+    display: none;
+    height:70vh;
     position: relative;
     margin: auto;
     padding-bottom: 2rem;
@@ -73,9 +90,10 @@ header {
         height:100%;
         object-fit: cover;
         filter:brightness(0.9);
+        background-color: lightgrey;
     }
 
-    p {
+    h1 {
         color:white;
         font:2rem merriweather;
         font-weight: 300;
@@ -89,60 +107,94 @@ header {
             font-size: 3rem;
         }
     }
+
+    @include mobileFirst(480) {
+        display: block;
+    }
+
+    @include mobileFirst(768) {
+        height: 75vh;
+    }
 }
 
-main {
+.home-main {
     position: relative;
     text-align: center;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1600px;
+    padding-left:1rem;
+    padding-right: 1rem;
+    margin:auto;
 
     .photography-type {
         font:1rem josefin sans;
         font-weight: 300;
         color:#102737;
-        padding-top: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         p {
             display: inline;
         }
 
-        @include mobileFirst(640) {
-            position: absolute;
-            right:0;
-            padding: 1rem;
+        @include mobileFirst(800) {
+            position: relative;
+            right:0rem;
+            top:0;
+            padding: 0rem;
             font-size: 1.2rem;
+            text-align: right;
         }
+
     }
 
     .photography-project-list {
-        font:1rem montserrat;
-        //font-weight: 300;
+        font:1rem Josefin Sans;
+        font-weight: 300;
         color:#102737;
-        padding-top: 2rem;
+        position: relative;
 
         @include mobileFirst(480) {
             display:flex;
             flex-wrap: wrap;
         }
+
+        @include mobileFirst(800) {
+            padding-top:2rem;
+        }
     }
 
     .photography-project {
         width:100%;
-        padding:.5rem;
+        padding:0.2rem;
+        position: relative;
+        
+        
 
         img {
             width:100%;
             object-fit:cover;
             box-shadow:0px 4px 4px rgba(0,0,0,0.2);
-            border-radius:2px;
+            border-radius:5px;
+            background-color: lightgrey;
+            filter: brightness(.9);
+
         }
 
         p {
-            line-height: .1;
+            color: black;
+            font-size: 1.5rem;
+
+            @include mobileFirst(640) {
+                color: white;
+                font-size: 2rem;
+                position: absolute;
+                top:40%;
+                left:50%;
+                transform:translate(-50%, -50%);
+            }
         }
 
-        @include mobileFirst(480) {
+        @include mobileFirst(640) {
             width:50%;
         }
 
@@ -155,8 +207,126 @@ main {
 
 }
 
+//***************************************************FOOTER**********************************************************//
+
 footer {
-    height: 7rem;
-    box-shadow:4px 4px 0px rgba(0,0,0,0.2);
+	position:relative;
+	padding-bottom:1rem;
+	padding-top:1rem;
+	//margin-top:3rem;
+  	z-index:0;
+  	background-color:$textColor;
+  	box-shadow:0 -2px 6px rgba(0,0,0,0.5);
+
+	p {
+		font:1rem $textFont;
+		color:white;
+		text-align:center;
+
+	}
+
+  a {
+    color:white!important;
+  }
+}
+
+.social-header {
+	margin:auto;
+	text-align:center;
+}
+
+.fa {
+    padding-bottom: 0px;
+    padding-left: .7em;
+    padding-right:.7em;
+    text-align: right;
+    text-decoration: none;
+    color: $textColor;
+    cursor:pointer;
+}
+
+.fa:hover {
+    opacity: 0.5;
+}
+
+.copyright {
+	font:1rem $textFont;
+	display:block;
+	margin:auto;
+	text-align:center;
+	color:%textColor;
+	padding-top:2rem;
+}
+
+//***************************************************ABOUT**********************************************************//
+
+.about-main {
+    width:100vw;
+    margin:auto;
+    padding:0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mobileFirst(640) {
+        height:90vh;
+    }
+}
+
+.about-hero {
+    position: relative;
+    width:100vw;
+    min-height: 50vh;
+
+    img {
+        object-fit: cover;
+        width:100%;
+        height:100%;
+    }
+
+    h1 {
+        text-align: center;
+        margin:auto;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        color:white;
+        font:3rem josefin sans;
+
+        @include mobileFirst(640) {
+            font-size: 5rem;
+        }
+
+    }
+
+    @include mobileFirst(640) {
+        width:50vw;
+        height:100%;
+    }
+}
+
+.about-text {
+    width:100vw;
+    text-align: center;
+    font:1rem montserrat;
+    font-weight:300;
+    padding:2rem;
+    background-color:#5e616d;
+    color:white;
+
+    h2 {
+        font:1.5rem montserrat;
+
+        @include mobileFirst(640) {
+            font-size: 1.6rem;
+        }
+    }
+
+    @include mobileFirst(640) {
+        width:50vw;
+        height:100%;
+        overflow:scroll;
+        font-size:1.2rem;
+    }
 }
 

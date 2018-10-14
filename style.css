@@ -1,3 +1,7 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html, body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -7,39 +11,394 @@ html, body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+a {
+  color: #176187;
+  text-decoration: none; }
+  a:hover {
+    opacity: 0.7;
+    text-decoration: underline; }
+
 header {
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  padding-bottom: .5rem;
+  z-index: 3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%; }
+
+.header-content {
   text-align: center;
-  font: 1.5rem josefin sans;
+  position: relative;
+  font: 1.8rem josefin sans;
   color: #102737;
-  padding: .5rem; }
-  header .header-menu-list {
-    font-size: .75rem;
+  padding: .5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem; }
+  .header-content .header-menu-list {
+    font-size: .9rem;
     font-weight: 300;
     padding-top: .5rem; }
+  .header-content .social-buttons a {
+    text-decoration: none;
+    font-size: 1rem; }
+  @media (min-width: 40em) {
+    .header-content .social-buttons {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding-bottom: .5rem; } }
+  @media (min-width: 40em) {
+    .header-content {
+      text-align: left;
+      max-width: 1600px;
+      margin: auto; } }
 
-main {
+.hero {
+  display: none;
+  width: 100%;
+  height: 70vh;
   position: relative;
-  text-align: center; }
-  main .photography-type {
-    font: 1rem josefin sans;
-    font-weight: 300;
-    color: #102737;
-    padding-top: 2rem; }
-    main .photography-type p {
-      display: inline; }
-  main .photography-project-list {
-    font: 1rem josefin sans;
-    font-weight: 300;
-    color: #102737;
-    padding-top: 2rem; }
-  main .photography-project {
+  margin: auto;
+  padding-bottom: 2rem; }
+  .hero img {
     width: 100%;
-    padding: .5rem; }
-    main .photography-project img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    background-color: lightgrey; }
+  .hero .home-hero-header {
+    color: white;
+    font: 2rem merriweather;
+    font-weight: 300;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    @media (min-width: 57.5em) {
+      .hero .home-hero-header {
+        font-size: 3.5rem; } }
+  @media (min-width: 30em) {
+    .hero {
+      display: block; } }
+  @media (min-width: 48em) {
+    .hero {
+      height: 75vh; } }
+
+.home-main {
+  position: relative;
+  text-align: center;
+  max-width: 1600px;
+  padding: 1rem;
+  margin: auto; }
+  .home-main .photography-type {
+    font: 1rem josefin sans;
+    font-weight: 300;
+    padding-bottom: 1rem; }
+    .home-main .photography-type p {
+      display: inline; }
+    @media (min-width: 50em) {
+      .home-main .photography-type {
+        position: relative;
+        right: 0rem;
+        top: 0;
+        padding: 0rem;
+        font-size: 1.2rem;
+        text-align: right; } }
+  .home-main .photography-project-list {
+    font: 1rem Josefin Sans;
+    font-weight: 300;
+    position: relative;
+    width: 100%; }
+    @media (min-width: 30em) {
+      .home-main .photography-project-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+  .home-main .photography-project {
+    width: 100%;
+    padding: 0.2rem;
+    position: relative; }
+    .home-main .photography-project:hover {
+      opacity: 1 !important; }
+      .home-main .photography-project:hover img {
+        -webkit-filter: opacity(0.9);
+        filter: opacity(0.9); }
+    .home-main .photography-project img {
       width: 100%;
       -o-object-fit: cover;
-      object-fit: cover; }
+      object-fit: cover;
+      -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      background-color: lightgrey;
+      -webkit-filter: brightness(0.9);
+      filter: brightness(0.9); }
+    .home-main .photography-project p {
+      font-size: 1.5rem; }
+      @media (min-width: 40em) {
+        .home-main .photography-project p {
+          width: 100%; } }
+      .home-main .photography-project p span {
+        font-size: 1rem; }
+    @media (min-width: 40em) {
+      .home-main .photography-project {
+        width: 50%; } }
+    @media (min-width: 50em) {
+      .home-main .photography-project {
+        width: 33.33%; } }
 
 footer {
-  height: 7rem;
-  background-color: #102737; }
+  position: relative;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  width: 100%;
+  z-index: 0;
+  background-color: #2a4355;
+  -webkit-box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.5); }
+  footer p {
+    font: 1rem Montserrat;
+    color: white;
+    text-align: center; }
+  footer a {
+    color: white !important; }
+
+.social-header {
+  margin: auto;
+  text-align: center; }
+
+.fa {
+  padding-bottom: 0px;
+  padding-left: .7em;
+  padding-right: .7em;
+  text-align: right;
+  text-decoration: none;
+  color: #2a4355;
+  cursor: pointer; }
+
+.fa:hover {
+  opacity: 0.5; }
+
+.copyright {
+  font: 1rem Montserrat;
+  display: block;
+  margin: auto;
+  text-align: center;
+  color: white;
+  padding-top: 2rem; }
+
+.about-main {
+  width: 100vw;
+  margin: auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  @media (min-width: 57.5em) {
+    .about-main {
+      height: 90vh; } }
+
+.about-hero {
+  position: relative;
+  width: 100vw;
+  min-height: 50vh; }
+  .about-hero img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+  .about-hero h1 {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font: 3rem josefin sans; }
+    @media (min-width: 40em) {
+      .about-hero h1 {
+        font-size: 5rem; } }
+  @media (min-width: 57.5em) {
+    .about-hero {
+      width: 50vw;
+      height: 100%; } }
+
+.about-text {
+  width: 100%;
+  text-align: center;
+  font: 1rem montserrat;
+  font-weight: 300;
+  padding: 2rem;
+  background-color: #5e616d;
+  color: white; }
+  .about-text h2 {
+    font: 1.5rem montserrat; }
+    @media (min-width: 40em) {
+      .about-text h2 {
+        font-size: 1.6rem; } }
+  @media (min-width: 57.5em) {
+    .about-text {
+      width: 50vw;
+      height: 100%;
+      overflow-y: scroll;
+      font-size: 1.2rem; } }
+
+.project-hero {
+  position: relative;
+  height: 50vh; }
+  .project-hero img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9); }
+  @media (min-width: 40em) {
+    .project-hero {
+      height: 85vh; } }
+
+.project-hero-title {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: crimson text, arial;
+  color: white;
+  font-size: 3rem;
+  line-height: 0.7; }
+  @media (min-width: 40em) {
+    .project-hero-title {
+      font-size: 6rem; } }
+  .project-hero-title span {
+    font-size: 1rem; }
+    @media (min-width: 40em) {
+      .project-hero-title span {
+        font-size: 2rem; } }
+
+.project-images {
+  padding-bottom: 2rem; }
+  .project-images img {
+    width: 100%;
+    padding-bottom: 2rem; }
+    @media (min-width: 48em) {
+      .project-images img {
+        padding-bottom: 0; } }
+
+.project-text {
+  font: 1.5rem crimson text;
+  text-align: center;
+  padding: 1rem; }
+
+.project-text-content {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 2rem; }
+
+@media (min-width: 48em) {
+  .triple-image-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .triple-image-row img {
+      width: 33.3%;
+      -o-object-fit: cover;
+      object-fit: cover; } }
+
+.full-width-image img {
+  width: 100%; }
+
+@media (min-width: 48em) {
+  .half-width-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem; }
+    .half-width-image img {
+      margin: auto;
+      display: block;
+      width: 60vw; } }
+
+.left {
+  grid-column: 1/3; }
+
+.right {
+  grid-column: 2/4; }
+
+@media (min-width: 48em) {
+  .triple-image-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .triple-image-collage img:first-child {
+      grid-column: 1/3;
+      grid-row: 1/3; } }
+
+.blog-header {
+  color: white;
+  font: 4rem montserrat;
+  font-weight: 300;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  @media (min-width: 48em) {
+    .blog-header {
+      font-size: 6rem !important;
+      top: 30% !important;
+      font-family: montserrat !important; } }
+
+.blog-subheader {
+  color: white;
+  font: 1rem montserrat;
+  font-weight: 300;
+  text-align: center; }
+  @media (min-width: 48em) {
+    .blog-subheader {
+      font-size: 2rem; } }
+
+.blog-post-main {
+  width: 100%;
+  padding: 1rem; }
+  @media (min-width: 57.5em) {
+    .blog-post-main {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      padding-left: 5rem;
+      padding-right: 5rem; } }
+  @media (min-width: 75em) {
+    .blog-post-main {
+      padding-left: 10rem;
+      padding-right: 10rem; } }
+  .blog-post-main img {
+    width: 100%;
+    padding-bottom: 1rem; }
+
+.blog-text {
+  font-family: montserrat;
+  width: 100%; }
+
+.blog-image-full {
+  grid-column-start: 1;
+  grid-column-end: 3; }

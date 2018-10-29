@@ -284,7 +284,7 @@ footer {
   font-family: crimson text, arial;
   color: white;
   font-size: 3rem;
-  line-height: 0.7; }
+  line-height: 0.9; }
   @media (min-width: 40em) {
     .project-hero-title {
       font-size: 6rem; } }
@@ -307,6 +307,9 @@ footer {
   font: 1.5rem crimson text;
   text-align: center;
   padding: 1rem; }
+  @media (min-width: 48em) {
+    .project-text {
+      padding: 7rem; } }
 
 .project-text-content {
   border-top: 1px solid black;
@@ -320,11 +323,13 @@ footer {
     display: flex; }
     .triple-image-row img {
       width: 33.3%;
+      height: 33.3%;
       -o-object-fit: cover;
       object-fit: cover; } }
 
 .full-width-image img {
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 2rem; }
 
 @media (min-width: 48em) {
   .half-width-image {
@@ -342,6 +347,9 @@ footer {
 .right {
   grid-column: 2/4; }
 
+.center {
+  grid-column: 2/3; }
+
 @media (min-width: 48em) {
   .triple-image-collage {
     display: grid;
@@ -352,12 +360,16 @@ footer {
       grid-row: 1/3; } }
 
 .image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  padding: 3rem;
   padding-top: 3rem;
   padding-bottom: 3rem; }
+  .image-grid img {
+    padding-top: 2rem; }
+  @media (min-width: 57.5em) {
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+      padding: 3rem; } }
 
 .blog-header {
   color: white;

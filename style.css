@@ -74,8 +74,8 @@ header {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-    -webkit-filter: brightness(0.9);
-    filter: brightness(0.9);
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8);
     background-color: lightgrey; }
   .hero .home-hero-header {
     color: white;

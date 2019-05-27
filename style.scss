@@ -3,13 +3,15 @@
 @import "css/media.scss";
 
 //***************************************************GENERAL*********************************************************//
+
+* {
+    box-sizing: border-box;
+  }
+
 html, body {
     margin:0;
     -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-body {
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -17,13 +19,19 @@ body {
   }
 
 a {
+    color: #176187;
     text-decoration: none;
-    color: inherit;
-    transition:.3s;
+    opacity: 1;
+    transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -webkit-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+    
 
     &:hover {
-        color: inherit;
         opacity: 0.7;
+        text-decoration: underline;
+        
         
         
     }
@@ -36,7 +44,7 @@ header {
     z-index: 3;
     position: sticky;
     top:0;
-    width:100vw;
+    width:100%;
 }
 
 .header-content {
@@ -59,7 +67,7 @@ header {
     .social-buttons {
             a {
                 text-decoration: none;
-                color:#102737;
+                //color:#102737;
                 font-size:1rem;
             }
 
@@ -73,13 +81,14 @@ header {
 
     @include mobileFirst(640) {
         text-align: left;
-        max-width: 1200px;
+        max-width: 1600px;
         margin: auto;
     }
 }
 
 .hero {
     display: none;
+    width:100%;
     height:70vh;
     position: relative;
     margin: auto;
@@ -89,13 +98,13 @@ header {
         width:100%;
         height:100%;
         object-fit: cover;
-        filter:brightness(0.9);
+        filter:brightness(0.8);
         background-color: lightgrey;
     }
 
-    h1 {
+    .home-hero-header {
         color:white;
-        font:2rem merriweather;
+        font:2.5rem merriweather;
         font-weight: 300;
         text-align: center;
         position: absolute;
@@ -103,8 +112,8 @@ header {
         left:50%;
         transform: translate(-50%, -50%);
 
-        @include mobileFirst(920) {
-            font-size: 3rem;
+        @include mobileFirst(640) {
+            font-size: 3.5rem;
         }
     }
 
@@ -121,15 +130,12 @@ header {
     position: relative;
     text-align: center;
     max-width: 1600px;
-    padding-left:1rem;
-    padding-right: 1rem;
+    padding: 1rem;
     margin:auto;
 
     .photography-type {
         font:1rem josefin sans;
         font-weight: 300;
-        color:#102737;
-        padding-top: 1rem;
         padding-bottom: 1rem;
 
         p {
@@ -150,16 +156,12 @@ header {
     .photography-project-list {
         font:1rem Josefin Sans;
         font-weight: 300;
-        color:#102737;
         position: relative;
+        width:100%;
 
         @include mobileFirst(480) {
             display:flex;
             flex-wrap: wrap;
-        }
-
-        @include mobileFirst(800) {
-            padding-top:2rem;
         }
     }
 
@@ -168,6 +170,7 @@ header {
         padding:0.2rem;
         position: relative;
         
+
         
 
         img {
@@ -181,16 +184,15 @@ header {
         }
 
         p {
-            color: black;
+            //color: black;
             font-size: 1.5rem;
 
             @include mobileFirst(640) {
-                color: white;
-                font-size: 2rem;
-                position: absolute;
-                top:40%;
-                left:50%;
-                transform:translate(-50%, -50%);
+                width:100%;
+            }
+
+            span {
+                font-size:1rem;
             }
         }
 
@@ -213,13 +215,13 @@ footer {
 	position:relative;
 	padding-bottom:1rem;
 	padding-top:1rem;
-	//margin-top:3rem;
+	width:100%;
   	z-index:0;
   	background-color:$textColor;
   	box-shadow:0 -2px 6px rgba(0,0,0,0.5);
 
 	p {
-		font:1rem $textFont;
+		font:1rem montserrat;
 		color:white;
 		text-align:center;
 
@@ -254,7 +256,7 @@ footer {
 	display:block;
 	margin:auto;
 	text-align:center;
-	color:%textColor;
+	color:white;
 	padding-top:2rem;
 }
 
@@ -267,7 +269,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
 
-    @include mobileFirst(640) {
+    @include mobileFirst(920) {
         height:90vh;
     }
 }
@@ -299,14 +301,14 @@ footer {
 
     }
 
-    @include mobileFirst(640) {
+    @include mobileFirst(920) {
         width:50vw;
         height:100%;
     }
 }
 
 .about-text {
-    width:100vw;
+    width:100%;
     text-align: center;
     font:1rem montserrat;
     font-weight:300;
@@ -322,11 +324,224 @@ footer {
         }
     }
 
-    @include mobileFirst(640) {
+    @include mobileFirst(920) {
         width:50vw;
         height:100%;
-        overflow:scroll;
+        overflow-y:scroll;
         font-size:1.2rem;
     }
 }
 
+//***************************************************PROJECT PAGES**********************************************************//
+
+.project-hero {
+    position: relative;
+    height:50vh;
+    //border-bottom:1rem solid $textColor;
+
+    img {
+        height:100%;
+        width:100%;
+        object-fit: cover;
+        filter: brightness(.9);
+    }
+
+    @include mobileFirst(640) {
+        height: 85vh;
+    }
+}
+
+.project-hero-title {
+    position: absolute;
+    top:35%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family:crimson text, arial;
+    color:white;
+    font-size:3rem;
+    line-height:0.9;
+
+    @include mobileFirst(640) {
+        font-size: 6rem;
+    }
+
+    span {
+        font-size:1rem;
+
+        @include mobileFirst(640) {
+            font-size: 2rem;
+        }
+    }
+
+}
+
+.project-images {
+    padding-bottom:2rem;
+
+    img {
+        width:100%;
+        padding-bottom: 2rem;
+
+        @include mobileFirst(768) {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.project-text {
+    font:1.5rem crimson text;
+    text-align:center;
+    padding:1rem;
+
+    @include mobileFirst(768) {
+        padding:7rem;
+    }
+}
+
+.project-text-content {
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+    padding:2rem;
+}
+
+.triple-image-row {
+    @include mobileFirst(768) {
+        display: flex;
+
+        img {
+            width:33.3%;
+            height:33.3%;
+            object-fit: cover;
+        }
+    }
+}
+
+.full-width-image {
+    img {
+        width:100%;
+        padding-bottom:2rem;
+    }
+}
+
+.half-width-image {
+    @include mobileFirst(768) {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding:2rem;
+
+        img {
+            margin:auto;
+            display: block;
+            width:60vw;
+        }
+    }
+}
+
+.left {
+    grid-column: 1/3;
+}
+
+.right {
+    grid-column:2/4;
+}
+
+.center {
+    grid-column:2/3;
+}
+
+.triple-image-collage {
+    @include mobileFirst(768) {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows:1fr 1fr;
+
+        img:first-child {
+            grid-column: 1/3;
+            grid-row:1/3;
+        }
+    }
+}
+
+.image-grid {
+    padding-top:3rem;
+    padding-bottom:3rem;
+
+    img {
+        padding-top:2rem;
+    }
+
+    @include mobileFirst(920) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap:2rem;
+        padding: 3rem;
+    }
+    
+}
+
+//***************************************************BLOG**********************************************************//
+
+
+
+.blog-header {
+        color:white;
+        font:4rem montserrat;
+        font-weight: 300;
+        text-align: center;
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+    @include mobileFirst(768) {
+        font-size:6rem!important;
+        top:30%!important;
+        font-family:montserrat!important;
+    }
+}
+
+.blog-subheader {
+    color:white;
+    font:1rem montserrat;
+    font-weight: 300;
+    text-align: center;
+
+    @include mobileFirst(768) {
+        font-size: 2rem;
+    }
+
+}
+
+.blog-post-main {
+    width:100%;
+    padding:1rem;
+
+    @include mobileFirst(920) {
+        display:grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    @include mobileFirst(1200) {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+
+    img {
+        width:100%;
+        padding-bottom: 1rem;
+    }
+}
+
+.blog-text {
+    font-family: montserrat;
+    width:100%;
+}
+
+.blog-image-full {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
